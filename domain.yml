@@ -32,6 +32,7 @@ responses:
       1. Du fragst nach einem Vergleich von zwei Spielern, z.B. "Vergleiche Maxi Kleber und Daniel Theis". Im Anschluss frage ich dich nach der gewünschten Statistik und dem Zeitraum.
       2. Wenn du bereits genau weißt, in welcher Statistik du die beiden Spieler vergleichen möchtest, kannst du auch direkt nach einem Vergleich fragen, z.B. "Vergleiche Russell Westbrook und Maxi Kleber bezüglich ihrer Rebounds in der Saison 2023-24?".
       Ich hoffe, ich konnte dir weiterhelfen. Wenn dir während der Benutzung noch Fragen einfallen, gib einfach 'Hilfe' ein.
+      Verfügbare Statistiken sind: Punkte, Rebounds, Assists, Steals, Turnovers, Blocks, Plus/Minus, Körbe, Wurfversuche, Wurfquote, Dreier, Dreierversuche, Dreierquote, Freiwürfe, Freiwurfversuche, Freiwurfquote, Fouls, Offensive Rebounds und Defensive Rebounds
   utter_ask_for_more:
   - text: Möchtest du noch mehr über einen Spieler wissen oder zwei Spieler miteinander vergleichen?
 actions:

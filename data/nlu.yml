@@ -137,6 +137,7 @@ nlu:
     - Statistik zu [Kobe Bryant](player_name)
     - Statistik zu [Caris Levert](player_name)
     - Statistik zu [Franz Wagner](player_name)
+    - Statistik zu [Dennis Schröder](player_name)
 - intent: ask_compare
   examples: |
     - Vergleiche [LeBron James](player_name) mit [Kevin Durant](player_name)

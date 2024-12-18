@@ -29,7 +29,7 @@ def send_stat_message(stat_index: int, dispatcher: CollectingDispatcher, player_
         dispatcher.utter_message(text=f"{player_name} hat insgesamt {total_stat} {stat} in der Saison {season}. Er hat dabei {games} Spiele absolviert.")
     
     else:
-        dispatcher.utter_message(text=f"Keine Statistiken für {player_name} gefunden.")
+        dispatcher.utter_message(text=f"Keine Statistiken für {player_name} in diesem Zeitraum gefunden.")
 
 
 
