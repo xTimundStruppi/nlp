@@ -158,6 +158,3 @@ nlu:
     - Help
     - I need help
     - Can you help me?
-- synonym: LeBron James
-  examples: |
-    - Lebron James

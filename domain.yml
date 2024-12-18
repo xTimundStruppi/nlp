@@ -17,7 +17,7 @@ responses:
   utter_answer_stat:
   - text: Okay du möchtest etwas über die {stat} von {player_name} wissen. In welchem zeitlichen Rahmen möchtest du die Statistik wissen? Insgesamt oder in einer bestimmten Saison?
   utter_answer_stat_type:
-  - text: Okay, du möchtest die {stat} von {player_name} {stat_type} wissen. Möchtest du die Statistik im Durchschnitt oder absolut wissen?
+  - text: Okay, du möchtest die {stat} von {player_name} {stat_type} wissen. Möchtest du die Statistik im Durchschnitt oder absolut die Gesamtanzahl wissen?
   utter_ask_compare_stats:
   - text: Okay, mit welcher Statistik möchtest du beide vergleichen?
   utter_ask_duration:
@@ -32,7 +32,6 @@ responses:
       1. Du fragst nach einem Vergleich von zwei Spielern, z.B. "Vergleiche Maxi Kleber und Daniel Theis". Im Anschluss frage ich dich nach der gewünschten Statistik und dem Zeitraum.
       2. Wenn du bereits genau weißt, in welcher Statistik du die beiden Spieler vergleichen möchtest, kannst du auch direkt nach einem Vergleich fragen, z.B. "Vergleiche Russell Westbrook und Maxi Kleber bezüglich ihrer Rebounds in der Saison 2023-24?".
       Ich hoffe, ich konnte dir weiterhelfen. Wenn dir während der Benutzung noch Fragen einfallen, gib einfach 'Hilfe' ein.
-  
   utter_ask_for_more:
   - text: Möchtest du noch mehr über einen Spieler wissen oder zwei Spieler miteinander vergleichen?
 actions:
