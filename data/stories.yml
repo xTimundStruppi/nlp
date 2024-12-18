@@ -1,0 +1,81 @@
+version: "3.1"
+
+stories:
+
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: nach statistik fragen
+  steps:
+  - intent: ask_player
+    entities:
+      - player_name: "LeBron James"
+  - slot_was_set:
+      - player_name: "LeBron James"
+  - action: utter_ask_stat
+  - intent: inform_stat
+    entities:
+      - stat: "Punkte"
+  - slot_was_set:
+      - stat: "Punkte"
+  - action: utter_answer_stat
+  - intent: inform_duration
+    entities:
+      - stat_type: "insgesamt"
+  - slot_was_set:
+      - stat_type: "insgesamt"
+  - action: utter_answer_stat_type
+  - intent: inform_value
+    entities:
+      - average: "durchschnittlich"
+  - slot_was_set:
+      - average: "durchschnittlich"
+  - action: get_player_stats_slots
+  - action: utter_ask_for_more
+
+- story: vergleich
+  steps:
+  - intent: ask_compare
+    entities:
+      - player_name: "LeBron James"
+      - player_name: "Kevin Durant"
+  - action: set_player_names_slots
+  - action: utter_ask_compare_stats
+  - intent: inform_stat
+  - entities:
+      - stat: "Punkte"
+  - slot_was_set:
+      - stat: "Punkte"
+  - action: utter_ask_duration
+  - intent: inform_duration
+  - entities:
+      - stat_type: "insgesamt"
+  - slot_was_set:
+      - stat_type: "insgesamt"
+  - action: compare_player_stats_slots
+  - action: utter_ask_for_more
+
+
+- story: interactive_story_3
+  steps:
+  - intent: ask_compare
+    entities:
+    - player_name: LeBron James
+    - player_name: Russell Westbrook
+  - action: set_player_names_slots
+  - action: utter_ask_compare_stats
+  - intent: inform_stat
+    entities:
+    - stat: Rebounds
+  - slot_was_set:
+    - stat: Rebounds
+  - action: utter_ask_duration
+  - intent: inform_duration
+    entities:
+    - stat_type: insgesamt
+  - slot_was_set:
+    - stat_type: insgesamt
+  - action: compare_player_stats_slots
+  - action: utter_ask_for_more

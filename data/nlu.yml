@@ -1,0 +1,163 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: ask_player_stats
+  examples: |
+    - Wie viele [Punkte](stat) hat [LeBron James](player_name) [insgesamt](stat_type) erzielt?
+    - Wie viele [Punkte](stat) hat [LeBron James](player_name)?
+    - Kannst du mir sagen, wie viele [Punkte](stat) [Kevin Durant](player_name) [im Durchschnitt](average) gemacht hat?
+    - Wie hoch sind die [Punkte](stat) von [Giannis Antetokounmpo](player_name) [insgesamt](stat_type)?
+    - Zeig mir die [Punkte](stat) von [Stephen Curry](player_name) gegen [Los Angeles Lakers](opponent_team).
+    - Wie viele [Punkte](stat) hat [Dirk Nowitzki](player_name) [in seiner Karriere](stat_type) erzielt?
+    - Wie viele [Assists](stat) hat [Russell Westbrook](player_name) [insgesamt](stat_type) gemacht?
+    - Wie hoch ist die Anzahl der [Assists](stat) von [Chris Paul](player_name) [im Durchschnitt](average)?
+    - Kannst du mir die [Assists](stat) von [Damian Lillard](player_name) gegen [Miami Heat](opponent_team) nennen?
+    - Zeig mir die [Assists](stat) von [Nikola Jokić](player_name) [in der Saison 2020-2021](stat_type).
+    - Wie viele [Rebounds](stat) hat [Anthony Davis](player_name) [insgesamt](stat_type) gesammelt?
+    - Wie viele [Offensive Rebounds](stat) hat [Shaquille O'Neal](player_name) [im Durchschnitt](average)?
+    - Wie viele [Defensive Rebounds](stat) hat [Kobe Bryant](player_name) [in der Saison 2017-2018] (stat_type) [durchschnittlich] (average) gemacht?
+    - Wie viele [Turnovers](stat) hat [LeBron James](player_name) [insgesamt](stat_type) gemacht?
+    - Wie hoch sind die [Turnovers](stat) von [Stephen Curry](player_name) [durchschnittlich](average)?
+    - Wie oft hat [Kevin Durant](player_name) [Turnovers](stat) gegen [Golden State Warriors](opponent_team)?
+    - Wie viele [Steals](stat) hat [LeBron James](player_name) [insgesamt](stat_type) gemacht?
+    - Wie hoch sind die [Steals](stat) von [Stephen Curry](player_name) [im Durchschnitt](average)?
+    - Wie viele [Steals](stat) hat [Kevin Durant](player_name) [in der Saison 2019-2020](stat_type) ?
+    - Wie viele [Steals](stat) hat [Kobe Bryant](player_name) [insgesamt](stat_type)?
+    - Wie viele [Blocks](stat) hat [Anthony Davis](player_name) [im Durchschnitt](average) erzielt?
+    - Zeig mir die [Blocks](stat) von [Rudy Gobert](player_name) [in der Saison 2021-2022](stat_type).
+    - Wie hoch ist das [Plus/Minus](stat) von [LeBron James](player_name) [in der Saison 2019-2020](stat_type)?
+    - Zeig mir das [Plus/Minus](stat) von [Giannis Antetokounmpo](player_name) [im Durchschnitt](average).
+    - Wie viele [Field Goals](stat) hat [Stephen Curry](player_name) [in der Saison 2022-2023](stat_type) gemacht?
+    - Wie viele [Field Goals Made](stat) hat [Kevin Durant](player_name) [insgesamt](stat_type)?
+    - Wie hoch ist die [Field Goal Percentage](stat) von [Kobe Bryant](player_name) [im Durchschnitt](average) [in der Saison 2018-19] (stat_type)?
+    - Wie viele [Dreier](stat) hat [Stephen Curry](player_name) [insgesamt](stat_type)?
+    - Wie hoch ist die [Dreierquote](stat) von [Damian Lillard](player_name) [in der Saison 2021-2022](stat_type)?
+    - Wie viele [Freiwürfe](stat) hat [Moritz Wagner](player_name) [im Durchschnitt](average)?
+    - Wie viele [Freiwürfe](stat) hat [Kobe Bryant](player_name) [insgesamt](stat_type)?
+    - Wie hoch ist die [Freiwurfquote](stat) von [Giannis Antetokounmpo](player_name) [in der Saison 2020-2021](stat_type)?
+    - Wie viele [Wurfversuche](stat) hat [Stephen Curry](player_name) [insgesamt](stat_type) gemacht?
+    - Wie viele [Körbe](stat) hat [Kevin Durant](player_name) [im Durchschnitt](average)?
+    - Wie viele [Dreierversuche](stat) hat [Kobe Bryant](player_name) [in der Saison 2019-2020](stat_type) gemacht?
+    - Wie viele [Freiwürfe](stat) hat [LeBron James](player_name) [insgesamt](stat_type) gemacht?
+    - Wie viele [Freiwurfversuche](stat) hat [Kobe Bryant](player_name) [im Durchschnitt](average)?
+    - Wie viele [offensive Rebounds](stat) hat [Franz Wagner](player_name) [in der Saison 2018-2019](stat_type)?
+    - Wie viele [defensive Rebounds](stat) hat [Maxi Kleber](player_name) [insgesamt](stat_type)?
+
+- intent: compare_two_players
+  examples: |
+    - Vergleiche [Michael Jordan](player_name) mit [Kobe Bryant](player_name) bezüglich ihrer [Punkte](stat).
+    - Vergleiche [Dirk Nowitzki](player_name) mit [Tim Duncan](player_name) bezüglich ihrer [Rebounds](stat) [in der Saison 2002-2003](stat_type).
+    - Wie unterscheiden sich [Larry Bird](player_name) und [Magic Johnson](player_name) in ihren [Assists](stat) [im Durchschnitt](average)?
+    - Vergleiche [LeBron James](player_name) mit [Russell Westbrook](player_name) bezüglich ihrer [durschnittlichen] (average) [Steals](stat).
+    - Wer hat mehr [Blocks](stat), [Rudy Gobert](player_name) oder [Anthony Davis](player_name) [in der Saison 2019-2020](stat_type)?
+    - Vergleiche [Shaquille O'Neal](player_name) mit [Hakeem Olajuwon](player) bezüglich ihrer [Field Goals Made](stat) [in ihrer Karriere](stat_type).
+    - Wer hat eine bessere [Freiwurfquote](stat), [Kevin Durant](player) oder [LeBron James](player_name) [im Durchschnitt](average)?
+    - Zeige mir die [Dreierquote](stat) von [Stephen Curry](player_name) im Vergleich zu [Ray Allen](player_name).
+    - Vergleiche [Jayson Tatum](player_name) mit [Jimmy Butler](player_name) in Bezug auf ihre [Turnovers](stat).
+    - Wer hat mehr [Steals](stat), [Chris Paul](player_name) oder [Damian Lillard](player_name) [in der Saison 2020-2021](stat_type)?
+    - Vergleiche [Giannis Antetokounmpo](player_name) mit [Paul George](player_name) bezüglich ihrer [Offensive Rebounds](stat) [im Durchschnitt](average).
+    - Wie unterscheiden sich [Nikola Jokic](player_name) und [Joel Embiid](player_name) in ihren [Punkten](stat) [in der Saison 2022-2023](stat_type)?
+    - Vergleiche [Luka Doncic](player_name) mit [Trae Young](player_name) in Bezug auf ihre [Field Goal Percentage](stat) [im Durchschnitt](average).
+    - Wer hat mehr [Defensive Rebounds](stat), [Karl Malone](player_name) oder [Dennis Rodman](player_name)?
+    - Vergleiche [James Harden](player_name) mit [Russell Westbrook](player_name) bezüglich ihrer [Freiwürfe](stat) [in der Saison 2018-2019](stat_type).
+    - Wer hat bessere [Dreier](stat), [Damian Lillard](player_name) oder [Stephen Curry](player_name)?
+    - Vergleiche [Kevin Garnett](player_name) mit [Dirk Nowitzki](player_name) bezüglich ihrer [Blocks](stat) [im Durchschnitt](average).
+    - Wie schneiden [Devin Booker](player_name) und [Klay Thompson](player_name) im Vergleich in [Punkten](stat) ab?
+    - Zeige mir die [Rebounds](stat) von [Al Horford](player_name) und [Brook Lopez](player_name) [in der Saison 2021-2022](stat_type).
+    - Vergleiche [Ja Morant](player_name) mit [Zion Williamson](player_name) bezüglich ihrer [Treffer](stat).
+    - Vergleiche [Michael Jordan](player_name) mit [Kobe Bryant](player_name) bezüglich ihrer [offensiven Leistung](stat).
+    - Vergleiche [Dirk Nowitzki](player_name) mit [Tim Duncan](player_name) bezüglich ihrer [offensiven Leistung](stat).
+    - Wie unterscheiden sich [Larry Bird](player_name) und [Magic Johnson](player_name) in ihrer [offensiven Leistung](stat)?
+    - Vergleiche [LeBron James](player_name) mit [Russell Westbrook](player_name) bezüglich ihrer [offensiven Leistung](stat).
+    - Vergleiche [Shaquille O'Neal](player_name) mit [Hakeem Olajuwon](player) bezüglich ihrer [defensiven Leistung](stat).
+    - Wie unterscheiden sich [Karl Malone](player_name) und [Maxi Kleber](player_name) in ihrer [defensiven Leistung](stat)?
+    - Vergleiche [Giannis Antetokounmpo](player_name) mit [Paul George](player_name) bezüglich ihres [Plus/Minus](stat).
+    - Vergleiche [Nikola Jokic](player_name) mit [Joel Embiid](player_name) bezüglich ihrer [Wurfversuche](stat).
+    - Vergleiche [Luka Doncic](player_name) mit [Trae Young](player_name) in Bezug auf ihre [Körbe](stat).
+    - Vergleiche [James Harden](player_name) mit [Russell Westbrook](player_name) bezüglich ihrer [Freiwurfquote](stat).
+    - Vergleiche [Kevin Garnett](player_name) mit [Dirk Nowitzki](player_name) bezüglich ihrer [Freiwurfversuche](stat).
+    - Vergleiche [Devin Booker](player_name) mit [Klay Thompson](player_name) bezüglich ihrer [defensiven Rebounds](stat).
+    - Vergleiche [Ja Morant](player_name) mit [Zion Williamson](player_name) bezüglich ihrer [offensiven Rebounds](stat).
+    - Vergleiche [Michael Jordan](player_name) mit [Kobe Bryant](player_name) bezüglich ihrer [Fouls](stat).
+    - Vergleiche [Dirk Nowitzki](player_name) mit [Tim Duncan](player_name) bezüglich ihrer [Steals](stat).
+- intent: inform_stat
+  examples: |
+    - [Punkte](stat)
+    - [Assists](stat)
+    - [Rebounds](stat)
+    - [Turnovers](stat)
+    - [Steals](stat)
+    - [Blocks](stat)
+    - [Plus/Minus](stat)
+    - [Wurfversuche](stat)
+    - [Körbe](stat)
+    - [Wurfquote](stat)
+    - [Dreier](stat)
+    - [Dreierversuche](stat)
+    - [Dreierquote](stat)
+    - [Freiwurfversuche](stat)
+    - [Freiwürfe](stat)
+    - [Freiwurfquote](stat)
+    - [offensive Rebounds](stat)
+    - [defensive Rebounds](stat)
+- intent: inform_duration
+  examples: |
+    - [insgesamt](stat_type)
+    - [in der Saison 2020-2021](stat_type)
+    - [im Durchschnitt](average)
+    - [in seiner Karriere](stat_type)
+- intent: inform_value
+  examples: |
+    - [durchschnittlich](average)
+    - [im Durchschnitt](average)
+    - [absolut](average)
+- intent: ask_player
+  examples: |
+    - Statistik zu [LeBron James](player_name)
+    - Statistik von [Kevin Durant](player_name)
+    - Statistik von [Stephen Curry](player_name)
+    - Informationen zu [Giannis Antetokounmpo](player_name)
+    - Statistik von [Dirk Nowitzki](player_name)
+    - Statistik von [Tim Duncan](player_name)
+    - Statistik von [Michael Jordan](player_name)
+    - Statistik zu [Kobe Bryant](player_name)
+    - Statistik zu [Caris Levert](player_name)
+    - Statistik zu [Franz Wagner](player_name)
+- intent: ask_compare
+  examples: |
+    - Vergleiche [LeBron James](player_name) mit [Kevin Durant](player_name)
+    - Vergleiche [Stephen Curry](player_name) mit [Giannis Antetokounmpo](player_name)
+    - Vergleiche [Dirk Nowitzki](player_name) und [Tim Duncan](player_name)
+    - Vergleiche [Michael Jordan](player_name) und [Kobe Bryant](player_name)
+    - Vergleiche [Larry Bird](player_name) und [Magic Johnson](player_name)
+    - Vergleiche [LeBron James](player_name) und [Russell Westbrook](player_name)
+    - Vergleiche [Lebron James]{"entity": "player_name", "value": "LeBron James"} und [Russell Westbrook](player_name)
+    - Vergleiche [Lebron James]{"entity": "player_name", "value": "LeBron James"} und [James Harden](player_name)
+- intent: ask_help
+  examples: |
+    - Hilfe
+    - Kannst du mir helfen?
+    - Ich brauche Hilfe
+    - Hilfe benötigt
+    - Ich brauche Unterstützung
+    - Hilfe erforderlich
+    - Help
+    - I need help
+    - Can you help me?
+- synonym: LeBron James
+  examples: |
+    - Lebron James

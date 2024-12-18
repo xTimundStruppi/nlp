@@ -1,0 +1,82 @@
+version: '3.1'
+intents:
+- ask_compare
+- ask_player
+- ask_player_stats
+- compare_two_players
+- greet
+- inform_duration
+- inform_stat
+- inform_value
+- ask_help
+responses:
+  utter_greet:
+  - text: Heyy:) willkommen beim NBA Chatbot! Stelle mir Fragen über einzelne Spieler oder vergleiche sie miteinander. Wenn du Hilfe benötigst, gib einfach 'Hilfe' ein.
+  utter_ask_stat:
+  - text: Okay, welche Statistik möchtest du über {player_name} wissen?
+  utter_answer_stat:
+  - text: Okay du möchtest etwas über die {stat} von {player_name} wissen. In welchem zeitlichen Rahmen möchtest du die Statistik wissen? Insgesamt oder in einer bestimmten Saison?
+  utter_answer_stat_type:
+  - text: Okay, du möchtest die {stat} von {player_name} {stat_type} wissen. Möchtest du die Statistik im Durchschnitt oder absolut wissen?
+  utter_ask_compare_stats:
+  - text: Okay, mit welcher Statistik möchtest du beide vergleichen?
+  utter_ask_duration:
+  - text: Möchtest du die Spieler insgesamt oder in einer bestimmten Saison vergleichen?
+  utter_ask_help:
+  - text: |
+      Ich helfe dir gerne! Stelle mir Fragen über einzelne Spieler oder vergleiche sie miteinander. Wenn du Hilfe benötigst, gib einfach 'Hilfe' ein und ich erkläre es dir nochmals.
+      Um Informationen zu einem Spieler zu erhlaten gibt es zwei Möglichkeiten:
+      1. Du fragst nach einer Statistik eines Spielers, z.B. "Statistik von LeBron James". Im Anschluss frage ich dich nach der gewünschten Statistik und dem Zeitraum.
+      2. Wenn du bereits genau weißt, was du wissen möchtest, kannst du auch direkt nach einer Statistik fragen, z.B. "Wie viele Punkte hat Kevin Durant in seiner Karriere durchschnittlich erzielt?".
+      Wenn du zwei Spieler miteinander vergleichen möchtest, gibt es die gleich zwei Möglichkeiten:
+      1. Du fragst nach einem Vergleich von zwei Spielern, z.B. "Vergleiche Maxi Kleber und Daniel Theis". Im Anschluss frage ich dich nach der gewünschten Statistik und dem Zeitraum.
+      2. Wenn du bereits genau weißt, in welcher Statistik du die beiden Spieler vergleichen möchtest, kannst du auch direkt nach einem Vergleich fragen, z.B. "Vergleiche Russell Westbrook und Maxi Kleber bezüglich ihrer Rebounds in der Saison 2023-24?".
+      Ich hoffe, ich konnte dir weiterhelfen. Wenn dir während der Benutzung noch Fragen einfallen, gib einfach 'Hilfe' ein.
+  
+  utter_ask_for_more:
+  - text: Möchtest du noch mehr über einen Spieler wissen oder zwei Spieler miteinander vergleichen?
+actions:
+- utter_ask_compare_stats
+- compare_player_stats_slots
+- utter_answer_stat
+- utter_ask_duration
+- get_player_stats
+- compare_player_stats
+- action_submit_player_stats
+- get_player_stats_slots
+- set_player_names_slots
+slots:
+  player_name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: player_name
+  player_names:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: player_name
+      allow_multiple: true
+  stat:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: stat
+  stat_type:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: stat_type
+  average:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: average
+entities:
+- player_name
+- stat_type
+- stat
+- average
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

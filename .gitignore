@@ -1,0 +1,33 @@
+# Python spezifisch
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+
+# Virtuelle Umgebung
+venv/
+.env
+
+# Log-Dateien
+*.log
+
+# Modelle und temporäre Dateien
+/models/
+*.tar.gz
+*.zip
+
+# Rasa spezifische Dateien
+/.rasa/
+rasa.db
+results/
+events.db
+credentials.yaml  # Wenn du sensible Zugangsdaten hast, wie API-Schlüssel
+
+# Trainingsdaten-Backups
+*.json.backup
+data/stories_backup.yml
+
+# TensorFlow spezifisch (wenn verwendet)
+*.tfrecord
+/checkpoints/

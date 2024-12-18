@@ -1,0 +1,20 @@
+version: "3.1"
+
+rules:
+
+- rule: comparison
+  steps:
+  - intent: compare_two_players
+  - action: compare_player_stats
+  - action: utter_ask_for_more
+
+- rule: spieler stats
+  steps:
+  - intent: ask_player_stats
+  - action: get_player_stats
+  - action: utter_ask_for_more
+
+- rule: hilfe
+  steps:
+  - intent: ask_help
+  - action: utter_ask_help
