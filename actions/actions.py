@@ -125,11 +125,11 @@ def compare_players_stats(dispatcher: CollectingDispatcher, player_names: List[s
 
         if comparison == 13 or comparison == 16 or comparison == 19:
             if player1_stats and player2_stats:
-                if duration == "season":
+                if player1_stats[4] == "season":
                     if player1_stats[1] > player2_stats[1]:
-                        dispatcher.utter_message(text=f"{player_names[0]} hat eine bessere {stat} als {player_names[1]} in der Saison {duration}. {player_names[0]} trifft mit {player1_stats[1]:.2f}% auf {player1_stats[2]} Versuche, während {player_names[1]} nur {player2_stats[1]:.2f}% auf {player2_stats[2]} Versuche hat.")
+                        dispatcher.utter_message(text=f"{player_names[0]} hat eine bessere {stat} als {player_names[1]} in der Saison {player1_stats[5]}. {player_names[0]} trifft mit {player1_stats[1]:.2f}% auf {player1_stats[2]} Versuche, während {player_names[1]} nur {player2_stats[1]:.2f}% auf {player2_stats[2]} Versuche hat.")
                     elif player1_stats[1] < player2_stats[1]:
-                        dispatcher.utter_message(text=f"{player_names[1]} hat eine bessere {stat} als {player_names[0]} in der Saison {duration}. {player_names[1]} trifft mit {player2_stats[1]:.2f}% auf {player2_stats[2]} Versuche, während {player_names[0]} nur {player1_stats[1]:.2f}% auf {player1_stats[2]} Versuche hat.")
+                        dispatcher.utter_message(text=f"{player_names[1]} hat eine bessere {stat} als {player_names[0]} in der Saison {player1_stats[5]}. {player_names[1]} trifft mit {player2_stats[1]:.2f}% auf {player2_stats[2]} Versuche, während {player_names[0]} nur {player1_stats[1]:.2f}% auf {player1_stats[2]} Versuche hat.")
                     else:
                         dispatcher.utter_message(text=f"{player_names[0]} und {player_names[1]} haben die gleiche {stat}.")
 
@@ -143,11 +143,12 @@ def compare_players_stats(dispatcher: CollectingDispatcher, player_names: List[s
                    
         else:
             if player1_stats and player2_stats:
-                if duration == "season":
+                if player1_stats[4] == "season":
+                
                     if player1_stats[3] > player2_stats[3]:
-                        dispatcher.utter_message(text=f"{player_names[0]} hat mehr {stat} pro Spiel als {player_names[1]} in der Saison {duration}. {player_names[0]} hat durchschnittlich {player1_stats[3]:.2f} {stat} pro Spiel, während {player_names[1]} nur {player2_stats[3]:.2f} {stat} pro Spiel aufweist.")
+                        dispatcher.utter_message(text=f"{player_names[0]} hat mehr {stat} pro Spiel als {player_names[1]} in der Saison {player1_stats[5]}. {player_names[0]} hat durchschnittlich {player1_stats[3]:.2f} {stat} pro Spiel, während {player_names[1]} nur {player2_stats[3]:.2f} {stat} pro Spiel aufweist.")
                     elif player1_stats[3] < player2_stats[3]:
-                        dispatcher.utter_message(text=f"{player_names[1]} hat mehr {stat} pro Spiel als {player_names[0]} in der Saison {duration}. {player_names[1]} hat durchschnittlich {player2_stats[3]:.2f} {stat} pro Spiel, während {player_names[0]} nur {player1_stats[3]:.2f} {stat} pro Spiel aufweist.")
+                        dispatcher.utter_message(text=f"{player_names[1]} hat mehr {stat} pro Spiel als {player_names[0]} in der Saison {player1_stats[5]}. {player_names[1]} hat durchschnittlich {player2_stats[3]:.2f} {stat} pro Spiel, während {player_names[0]} nur {player1_stats[3]:.2f} {stat} pro Spiel aufweist.")
                     else:
                         dispatcher.utter_message(text=f"{player_names[0]} und {player_names[1]} haben die gleiche Anzahl an {stat}.")
                 
@@ -265,4 +266,6 @@ class SetPlayerSlots(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         entities = extract_entities(tracker)
         player_names = entities["player_name"]
+        if len(player_names)!=2:
+            dispatcher.utter_message(text="Bitte gib zwei Spieler an, die du vergleichen möchtest.")
         return [SlotSet("player_names", player_names),]
