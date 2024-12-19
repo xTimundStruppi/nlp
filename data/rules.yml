@@ -18,3 +18,28 @@ rules:
   steps:
   - intent: ask_help
   - action: utter_ask_help
+
+- rule: smalltalk bot challenge
+  steps:
+  - intent: ask_bot
+  - action: utter_ask_bot
+
+- rule: fav
+  steps:
+  - intent: ask_fav
+  - action: utter_ask_fav
+
+- rule: bye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: bad mood
+  steps:
+  - intent: bad_mood
+  - action: utter_bad_mood
+
+- rule: weather
+  steps:
+  - intent: ask_weather
+  - action: utter_ask_weather

@@ -9,9 +9,16 @@ intents:
 - inform_stat
 - inform_value
 - ask_help
+- ask_bot
+- ask_wellbeing
+- bad_mood
+- good_mood
+- ask_fav
+- goodbye
+- ask_weather
 responses:
   utter_greet:
-  - text: Heyy:) willkommen beim NBA Chatbot! Stelle mir Fragen über einzelne Spieler oder vergleiche sie miteinander. Wenn du Hilfe benötigst, gib einfach 'Hilfe' ein.
+  - text: Hallo, was möchtest du wissen?
   utter_ask_stat:
   - text: Okay, welche Statistik möchtest du über {player_name} wissen?
   utter_answer_stat:
@@ -22,6 +29,20 @@ responses:
   - text: Okay, mit welcher Statistik möchtest du beide vergleichen?
   utter_ask_duration:
   - text: Möchtest du die Spieler insgesamt oder in einer bestimmten Saison vergleichen?
+  utter_ask_bot:
+  - text: Ja ich bin ein Bot, der dir gerne bei Fragen über NBA Spieler hilft. Stelle mir Fragen über einzelne Spieler oder vergleiche sie miteinander.
+  utter_ask_wellbeing:
+  - text: Mir geht es gut, danke der Nachfrage. Wie geht es dir?
+  utter_bad_mood:
+  - text: Das ist schade. Vielleicht kann dich der Fakt aufmuntern, dass Klay Thompson 37 Punkte in einem Viertel gegen die Sacramento Kings erzielt hat. Aber wenn es dir nicht gut geht, solltest du mit Menschen reden und nicht mit dem NBA Chatbot:)
+  utter_good_mood:
+  - text: Top, dann lass uns nicht lange warten und direkt loslegen!
+  utter_ask_fav:
+  - text: Mein Lieblingsspieler ist Lebron James. Er ist ein großartiger Spieler und hat die NBA in den letzten Jahren geprägt.
+  utter_ask_weather:
+  - text: Ich bin ein NBA Chatbot und kann dir leider nicht sagen, wie das Wetter ist. Bei Fragen über NBA Spieler bist du hier richtig, für das Wetter musst du leider woanders suchen.
+  utter_goodbye:
+  - text: Bis bald! Gehe raus und werfe selsbt ein paar Körbe, dann kann ich dir in Zukunft Statistiken über dich geben ;)
   utter_ask_help:
   - text: |
       Ich helfe dir gerne! Stelle mir Fragen über einzelne Spieler oder vergleiche sie miteinander. Wenn du Hilfe benötigst, gib einfach 'Hilfe' ein und ich erkläre es dir nochmals.

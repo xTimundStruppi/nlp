@@ -159,3 +159,59 @@ nlu:
     - Help
     - I need help
     - Can you help me?
+- intent: ask_bot
+  examples: |
+    - Bist du ein Bot?
+    - Bist du ein Mensch?
+    - Bist du ein Roboter?
+    - Bist du ein Chatbot?
+    - Bist du ein Computer?
+    - Bist du ein Mensch oder ein Roboter?
+    - Bist du ein Chatbot oder ein Mensch?
+- intent: ask_wellbeing
+  examples: |
+    - Wie geht es dir?
+    - Wie fühlst du dich?
+    - Geht es dir gut?
+    - Wie geht es dir heute?
+    - Wie geht es dir jetzt?
+    - Wie geht es dir gerade?
+- intent: bad_mood
+  examples: |
+    - schlecht
+    - nicht gut
+    - nicht so gut
+    - schlechte Laune
+    - schlechte Stimmung
+    - nicht so gut drauf
+    - nicht gut drauf
+    - nicht gut gelaunt
+    - nicht gut fühlen
+    - nicht gut drauf sein
+- intent: good_mood
+  examples: |
+    - gut
+    - gut drauf
+    - gut gelaunt
+    - sehr gut
+    - super
+    - toll
+- intent: ask_fav
+  examples: |
+    - Wer ist dein Lieblingsspieler?
+    - Hast du einen Lieblingsspieler?
+    - Welcher Spieler ist dein Favorit?
+    - Wer ist dein Favorit?
+- intent: goodbye
+  examples: |
+    - tschüss
+    - auf wiedersehen
+    - bis bald
+    - bye 
+    - ciao
+    - bye bye
+- intent: ask_weather
+  examples: |
+    - Wie ist das Wetter?
+    - Wie ist das Wetter heute?
+    - Wie wird das Wetter?

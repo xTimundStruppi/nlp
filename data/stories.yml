@@ -79,3 +79,22 @@ stories:
     - stat_type: insgesamt
   - action: compare_player_stats_slots
   - action: utter_ask_for_more
+
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_wellbeing
+  - action: utter_ask_wellbeing
+  - intent: good_mood
+  - action: utter_good_mood
+
+- story: sad path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_wellbeing
+  - action: utter_ask_wellbeing
+  - intent: bad_mood
+  - action: utter_bad_mood
