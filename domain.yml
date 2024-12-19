@@ -35,6 +35,8 @@ responses:
       Verfügbare Statistiken sind: Punkte, Rebounds, Assists, Steals, Turnovers, Blocks, Plus/Minus, Körbe, Wurfversuche, Wurfquote, Dreier, Dreierversuche, Dreierquote, Freiwürfe, Freiwurfversuche, Freiwurfquote, Fouls, Offensive Rebounds und Defensive Rebounds
   utter_ask_for_more:
   - text: Möchtest du noch mehr über einen Spieler wissen oder zwei Spieler miteinander vergleichen?
+
+
 actions:
 - utter_ask_compare_stats
 - compare_player_stats_slots

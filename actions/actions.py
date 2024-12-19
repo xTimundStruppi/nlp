@@ -5,10 +5,10 @@ import sqlite3
 import pandas as pd
 from .utils import averagePercents, extract_entities, get_stat_index, check_duration_synonym, extract_season
 from rasa_sdk.events import SlotSet
+from rasa_sdk.events import FollowupAction
 
 def send_stat_message(stat_index: int, dispatcher: CollectingDispatcher, player_name: str, stat: str, total_stat: float, duration_key: str, games: int, season: str = None, average: bool = False, stat_percent: float = None, attempts: int = None, ):
 
-    
     if stat_index ==10:
         dispatcher.utter_message(text=f"{player_name} hat ein durchschnittliches {stat} von {total_stat:.2f} auf {games} Spiele.")
         return
@@ -30,8 +30,6 @@ def send_stat_message(stat_index: int, dispatcher: CollectingDispatcher, player_
     
     else:
         dispatcher.utter_message(text=f"Keine Statistiken für {player_name} in diesem Zeitraum gefunden.")
-
-
 
 def fetch_and_process_stats(dispatcher: CollectingDispatcher, player_name: str, stat: str, duration: str, average: bool):
     connection = sqlite3.connect("nba_player_games.db")
@@ -162,7 +160,6 @@ def compare_players_stats(dispatcher: CollectingDispatcher, player_names: List[s
                         dispatcher.utter_message(text=f"{player_names[0]} und {player_names[1]} haben die gleiche Anzahl an {stat}.")
                    
 
-
 class GetPlayerStats(Action):
 
     def name(self) -> Text:
@@ -172,7 +169,6 @@ class GetPlayerStats(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-
         entities = extract_entities(tracker)
         player_name = entities["player_name"]
         player_name = player_name[0]
@@ -180,11 +176,10 @@ class GetPlayerStats(Action):
         duration = entities["duration"]
         average = entities["average"]
 
-
         if not player_name:
             dispatcher.utter_message(text="No player name found.")
             return []
-        
+    
         else:
             try:
                 stat_index,stat_percent, attempts, total_stat, duration_key, season, games = fetch_and_process_stats(dispatcher, player_name, stat, duration, average)

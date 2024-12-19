@@ -43,13 +43,10 @@ function sendMessage() {
     }
 }
 
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     // Begrüßungsnachricht des Bots
     const chatBox = document.getElementById("chat-box");
-    const botMessage = "Heyy:) willkommen beim NBA Chatbot! Stelle mir Fragen über einzelne Spieler oder vergleiche sie miteinander. Wenn du Hilfe benötigst, gib einfach 'Hilfe' ein.";
+    const botMessage = "Heyy:) Willkommen beim NBA Chatbot! Stelle mir Fragen über einzelne Spieler oder vergleiche sie miteinander. Wenn du Hilfe benötigst, gib einfach 'Hilfe' ein.";
     chatBox.innerHTML += `
         <div class="message bot-message">
             <img class="icon" src="https://upload.wikimedia.org/wikipedia/en/0/03/National_Basketball_Association_logo.svg">

@@ -90,8 +90,8 @@ input {
 }
 
 input:focus {
-    border-color: #FFC39F; /* Hier die Umrandungsfarbe ändern, wenn das Eingabefeld fokussiert ist */
-    outline: none; /* Entfernt den Standard-Umrandungsstil des Browsers */
+    border-color: #FFC39F;
+    outline: none; 
 }
 
 button {
